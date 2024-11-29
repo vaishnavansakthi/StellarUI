@@ -8,17 +8,12 @@ module.exports = {
       jsx: true,
     },
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended', // Ensures Prettier is run with ESLint
-  ],
+  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended', 'plugin:storybook/recommended'],
   rules: {
     'react/prop-types': 'off', // Since we're using TypeScript, PropTypes aren't necessary
     '@typescript-eslint/explicit-module-boundary-types': 'off', // Optional rule to allow inferred types
     '@typescript-eslint/no-explicit-any': 'warn', // Warn about usage of `any`
+    'react/no-unescaped-entities': 'off',
     'prettier/prettier': [
       'error',
       {
