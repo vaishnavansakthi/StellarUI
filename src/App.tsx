@@ -1,9 +1,14 @@
-import React from "react";
+import React from 'react';
 
-function App() {
+/**
+ *
+ * @param {string} username
+ * @returns jsx.component
+ */
+function App({ username }: { username?: string }) {
   return (
     <div className="App">
-      <h1>Stellar UI</h1>
+      <h1>Stellar UI {username}</h1>
     </div>
   );
 }
