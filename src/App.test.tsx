@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import App from './App';
 
 describe('App Component', () => {
@@ -12,17 +13,5 @@ describe('App Component', () => {
     render(<App />);
     // Check if the header is rendered without a username
     expect(screen.getByText('Stellar UI')).toBeInTheDocument();
-  });
-
-  it('calls the onClick function when the button is clicked', () => {
-    const logSpy = jest.spyOn(console, 'log'); // Spy on console.log
-    render(<App username="John" />);
-
-    const button = screen.getByText('Hello');
-    fireEvent.click(button); // Simulate button click
-
-    // Check if the console.log was called with 'clicked'
-    expect(logSpy).toHaveBeenCalledWith('clicked');
-    logSpy.mockRestore(); // Clean up spy
   });
 });

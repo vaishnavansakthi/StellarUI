@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './components/Button/Button';
+import { Button } from './components';
 
 /**
  *
@@ -11,10 +11,18 @@ function App({ username }: { username?: string }) {
     <div className="App">
       <h1>Stellar UI {username}</h1>
       <Button
-        label={'Hello'}
+        label={'TEXT'}
         onClick={() => {
           console.log('clicked');
         }}
+        variant="text"
+      ></Button>
+      <Button
+        label={'CONTAINED'}
+        onClick={() => {
+          console.log('clicked');
+        }}
+        variant="contained"
       ></Button>
     </div>
   );

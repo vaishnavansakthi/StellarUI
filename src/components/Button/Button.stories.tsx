@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, ButtonProps } from './Button';
+import Button from './Button';
+import { ButtonProps } from '../../interface/Button';
 import { StoryFn, Meta } from '@storybook/react/types-6-0';
 
 export default {
@@ -9,22 +10,36 @@ export default {
 
 const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  label: 'Primary Button',
+export const Text = Template.bind({});
+Text.args = {
+  label: 'TEXT',
   onClick: () => alert('Primary Button Clicked'),
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Secondary Button',
-  onClick: () => alert('Secondary Button Clicked'),
-  variant: 'secondary',
+export const Contained = Template.bind({});
+Contained.args = {
+  label: 'CONTAINED',
+  onClick: () => alert('Contained Button Clicked'),
+  variant: 'contained',
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  label: 'Disabled Button',
-  onClick: () => alert('Disabled Button Clicked'),
-  disabled: true,
+export const Outlined = Template.bind({});
+Outlined.args = {
+  label: 'OUTLINED',
+  onClick: () => alert('Outlined Button Clicked'),
+  variant: 'outlined',
 };
+
+// export const Secondary = Template.bind({});
+// Secondary.args = {
+//   label: 'TEXT',
+//   onClick: () => alert('Secondary Button Clicked'),
+//   variant: 'text',
+// };
+
+// export const Disabled = Template.bind({});
+// Disabled.args = {
+//   label: 'Disabled Button',
+//   onClick: () => alert('Disabled Button Clicked'),
+//   disabled: true,
+// };

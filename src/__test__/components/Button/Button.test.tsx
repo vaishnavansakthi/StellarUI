@@ -1,7 +1,7 @@
 // src/components/Button/Button.test.tsx
-
+import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { Button } from './Button';
+import { Button } from '../../../components';
 
 describe('Button Component', () => {
   it('renders with the correct label', () => {
@@ -32,13 +32,7 @@ describe('Button Component', () => {
   it('applies the primary variant class by default', () => {
     render(<Button label="Primary Button" onClick={() => {}} />);
     const button = screen.getByText('Primary Button');
-    expect(button).toHaveClass('button primary');
-  });
-
-  it('applies the secondary variant class when specified', () => {
-    render(<Button label="Secondary Button" onClick={() => {}} variant="secondary" />);
-    const button = screen.getByText('Secondary Button');
-    expect(button).toHaveClass('button secondary');
+    expect(button).toHaveClass('button button-text');
   });
 
   it('applies the disabled class when disabled', () => {

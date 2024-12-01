@@ -1,26 +1,19 @@
 import React from 'react';
+import { ButtonProps } from '../../interface/Button';
 import './Button.scss';
 
-export interface ButtonProps {
-  label: string;
-  onClick: () => void;
-  disabled?: boolean;
-  variant?: 'primary' | 'secondary';
-}
-
-export const Button: React.FC<ButtonProps> = ({
-  label,
-  onClick,
-  disabled = false,
-  variant = 'primary',
-}) => {
+const Button: React.FC<ButtonProps> = ({ label, onClick, disabled = false, variant = 'text' }) => {
   return (
     <button
-      className={`button ${variant} ${disabled ? 'disabled' : ''}`}
+      className={`button ${`button-${variant}`} ${disabled ? 'disabled' : ''}`}
       onClick={onClick}
       disabled={disabled}
+      aria-label={label}
+      aria-disabled={disabled}
     >
       {label}
     </button>
   );
 };
+
+export default Button;
